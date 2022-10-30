@@ -1,0 +1,14 @@
+@import url(./Colors.css);
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    color: var(--Bright-Blue);
+    font-size: 18px;
+}
