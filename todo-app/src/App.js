@@ -1,9 +1,12 @@
+import Header from "./components/Header/Header";
+import Todos from "./components/Todos/Todos";
 import "./styles/App.css";
 
-function App() {
+const App = () => {
     return (
         <div className="App">
-            <p>Hello</p>
+            <Header/>
+            <Todos/>
         </div>
     );
 }

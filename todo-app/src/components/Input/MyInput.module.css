@@ -1,0 +1,18 @@
+@import url(../../styles/Colors.css);
+
+.myInput {
+    width: 100%;
+    height: 60px;
+    vertical-align: middle;
+    border: 1px solid var(--Very-Dark-Desaturated-Blue);
+    padding: 0 20px;
+    margin: 45px 0 20px 0;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    color: var(--Light-Grayish-Blue);
+    border-radius: 3px;
+}
+
+.myInput:focus {
+    outline: none;
+    border: 1px solid var(--Dark-Grayish-Blue);
+}

@@ -1,0 +1,25 @@
+@import url(../../styles/Colors.css);
+
+.note__content {
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    border-bottom: 1px solid var(--Dark-Grayish-Blue);
+    vertical-align: middle;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.note__text {
+    color:var(--Light-Grayish-Blue);
+    margin-top: 3px;
+}
+
+.note__circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--Dark-Grayish-Blue);
+    cursor: pointer;
+}

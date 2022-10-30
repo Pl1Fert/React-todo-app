@@ -1,0 +1,26 @@
+@import url(../../styles/Colors.css);
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    margin-right: -50%;
+    width: 540px;
+    height: 600px;
+}
+
+
+.container__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container__header__title {
+    color: var(--Light-Grayish-Blue)
+}
+
+.change__theme__icon {
+    cursor: pointer;
+}
