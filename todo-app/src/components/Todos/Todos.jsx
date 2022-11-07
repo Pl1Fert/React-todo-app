@@ -4,10 +4,10 @@ import sunIcon from "../../images/icon-sun.svg";
 import moonIcon from "../../images/icon-moon.svg";
 import { useState } from "react";
 import MyInput from "../Input/MyInput";
-import NoteItem from "../NoteItem/NoteItem";
 import NoteList from "../NoteList/NoteList";
+import Footer from "../Footer/Footer";
 
-const Todos = () => {
+const Todos = ({ notes, create }) => {
     //TODO: implement change theme
     // const [icon, setIcon] = useState([sunIcon, moonIcon]);
 
@@ -16,13 +16,14 @@ const Todos = () => {
             <div className={classes.container__header}>
                 <h1 className={classes.container__header__title}>T O D O</h1>
                 <img
-                src={sunIcon}
-                alt=""
-                className={classes.change__theme__icon}
+                    src={sunIcon}
+                    alt=""
+                    className={classes.change__theme__icon}
                 />
             </div>
-            <MyInput/>
-            <NoteList/>
+            <MyInput create={create} />
+            <NoteList notes={notes} />
+            <Footer listLength={notes.length}/>
         </div>
     );
 };

@@ -1,14 +1,19 @@
 @import url(../../styles/Colors.css);
 
-.note__content {
+.note {
     background-color: var(--Very-Dark-Desaturated-Blue);
     border-bottom: 1px solid var(--Dark-Grayish-Blue);
     vertical-align: middle;
     padding: 20px 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
+}
+
+.note__content {
+    margin-right: auto;
+    cursor: pointer;
 }
 
 .note__text {
@@ -21,5 +26,9 @@
     height: 20px;
     border-radius: 50%;
     border: 1px solid var(--Dark-Grayish-Blue);
+    cursor: pointer;
+}
+
+.note__cross__icon {
     cursor: pointer;
 }
