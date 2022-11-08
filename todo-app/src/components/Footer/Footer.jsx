@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Footer.module.css";
 
 const Footer = ({ listLength }) => {
+
     return (
         <div className={classes.footer}>
             <div className={classes.footer__items__counter}>

@@ -8,6 +8,8 @@ const MyInput = ({ create }) => {
     const addNewNote = () => {
         const newNote = {
             ...note,
+            id: Date.now(),
+            status: "active"
         };
 
         create(newNote);

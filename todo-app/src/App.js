@@ -10,10 +10,14 @@ const App = () => {
         setNotes([...notes, newNote]);
     };
 
+    const removeNote = (note) => {
+        setNotes(notes.filter((n) => n.id !== note.id));
+    };
+
     return (
         <div className="App">
             <Header />
-            <Todos notes={notes} create={createNote} />
+            <Todos notes={notes} create={createNote} remove={removeNote} />
         </div>
     );
 };

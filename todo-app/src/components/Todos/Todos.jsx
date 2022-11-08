@@ -7,9 +7,8 @@ import MyInput from "../Input/MyInput";
 import NoteList from "../NoteList/NoteList";
 import Footer from "../Footer/Footer";
 
-const Todos = ({ notes, create }) => {
+const Todos = ({ notes, create, remove }) => {
     //TODO: implement change theme
-    // const [icon, setIcon] = useState([sunIcon, moonIcon]);
 
     return (
         <div className={classes.container}>
@@ -22,8 +21,8 @@ const Todos = ({ notes, create }) => {
                 />
             </div>
             <MyInput create={create} />
-            <NoteList notes={notes} />
-            <Footer listLength={notes.length}/>
+            <NoteList notes={notes} remove={remove} />
+            <Footer listLength={notes.length} />
         </div>
     );
 };
