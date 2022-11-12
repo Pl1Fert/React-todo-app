@@ -7,7 +7,7 @@ import MyInput from "../Input/MyInput";
 import NoteList from "../NoteList/NoteList";
 import Footer from "../Footer/Footer";
 
-const Todos = ({ notes, create, remove }) => {
+const Todos = ({ notes, create, remove, changeNoteStatus, clear }) => {
     //TODO: implement change theme
 
     return (
@@ -21,8 +21,12 @@ const Todos = ({ notes, create, remove }) => {
                 />
             </div>
             <MyInput create={create} />
-            <NoteList notes={notes} remove={remove} />
-            <Footer listLength={notes.length} />
+            <NoteList
+                notes={notes}
+                remove={remove}
+                changeNoteStatus={changeNoteStatus}
+            />
+            <Footer listLength={notes.length} clear={clear}/>
         </div>
     );
 };

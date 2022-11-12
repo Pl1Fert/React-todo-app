@@ -31,6 +31,13 @@
     margin-top: 3px;
 }
 
+.note__text.done {
+    color:var(--Dark-Grayish-Blue);
+    text-decoration-line: line-through;
+    margin-top: 3px;
+}
+
+
 .note__circle {
     width: 20px;
     height: 20px;

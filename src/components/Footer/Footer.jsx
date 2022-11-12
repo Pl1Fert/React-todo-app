@@ -1,8 +1,7 @@
 import React from "react";
 import classes from "./Footer.module.css";
 
-const Footer = ({ listLength }) => {
-
+const Footer = ({ listLength, clear }) => {
     return (
         <div className={classes.footer}>
             <div className={classes.footer__items__counter}>
@@ -13,7 +12,7 @@ const Footer = ({ listLength }) => {
                 <p className={classes.footer__sort__query}>Active</p>
                 <p className={classes.footer__sort__query}>Completed</p>
             </div>
-            <div className={classes.footer__clear}>
+            <div className={classes.footer__clear} onClick={() => clear()}>
                 <p className={classes.footer__clear__text}>Clear Completed</p>
             </div>
         </div>
