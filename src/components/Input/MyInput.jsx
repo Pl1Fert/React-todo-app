@@ -2,14 +2,20 @@ import React from "react";
 import { useState } from "react";
 import classes from "./MyInput.module.css";
 
-const MyInput = ({ create }) => {
+const MyInput = ({ create, mode }) => {
     const [note, setNote] = useState({ content: "" });
+
+    const inputClasses = [classes.myInput];
+
+    if (mode === "light") {
+        inputClasses.push(classes.light);
+    }
 
     const addNewNote = () => {
         const newNote = {
             ...note,
             id: Date.now(),
-            status: "active"
+            status: "active",
         };
 
         create(newNote);
@@ -20,7 +26,7 @@ const MyInput = ({ create }) => {
         <input
             type="text"
             value={note.content}
-            className={classes.myInput}
+            className={inputClasses.join(" ")}
             placeholder="Create a new todo..."
             onChange={(e) => setNote({ ...note, content: e.target.value })}
             onKeyDown={(e) => {

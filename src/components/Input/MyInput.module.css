@@ -12,6 +12,11 @@
     border-radius: 3px;
 }
 
+.myInput.light {
+    background-color: var(--Very-Light-Gray);
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
 .myInput:focus {
     outline: none;
     border: 1px solid var(--Dark-Grayish-Blue);

@@ -10,15 +10,14 @@
     height: 600px;
 }
 
-
-.container__header{
+.container__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .container__header__title {
-    color: var(--Light-Grayish-Blue)
+    color: var(--Light-Grayish-Blue);
 }
 
 .change__theme__icon {

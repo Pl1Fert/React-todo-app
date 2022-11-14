@@ -5,6 +5,7 @@ import "./styles/App.css";
 
 const App = () => {
     const [notes, setNotes] = useState([]);
+    const [mode, setMode] = useState("dark");
 
     const createNote = (newNote) => {
         setNotes([...notes, newNote]);
@@ -31,14 +32,22 @@ const App = () => {
     };
 
     return (
-        <div className="App">
-            <Header />
+        <div
+            className="App"
+            style={{
+                backgroundColor:
+                    mode === "dark" ? "hsl(235, 21%, 11%)" : "hsl(0, 0%, 98%)",
+            }}
+        >
+            <Header mode={mode} />
             <Todos
                 notes={notes}
                 create={createNote}
                 remove={removeNote}
                 changeNoteStatus={changeNoteStatus}
                 clear={clearDoneNotes}
+                mode={mode}
+                changeMode={setMode}
             />
         </div>
     );

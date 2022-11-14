@@ -1,9 +1,15 @@
 import React from "react";
 import classes from "./Footer.module.css";
 
-const Footer = ({ listLength, clear }) => {
+const Footer = ({ listLength, clear, mode }) => {
+    const footerClasses = [classes.footer];
+
+    if (mode === "light") {
+        footerClasses.push(classes.light);
+    }
+
     return (
-        <div className={classes.footer}>
+        <div className={footerClasses.join(" ")}>
             <div className={classes.footer__items__counter}>
                 {listLength} items left
             </div>

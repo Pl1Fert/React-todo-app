@@ -12,6 +12,10 @@
     gap: 20px;
 }
 
+.note.light {
+    background-color: var(--Very-Light-Gray);
+}
+
 .note:hover .note__cross__icon {
     display: block;
 }
@@ -27,16 +31,18 @@
 }
 
 .note__text {
-    color:var(--Light-Grayish-Blue);
+    color: var(--Light-Grayish-Blue);
     margin-top: 3px;
+}
+
+.note__text.light {
+    color: var(--Very-Dark-Grayish-Blue);
 }
 
 .note__text.done {
-    color:var(--Dark-Grayish-Blue);
+    color: var(--Dark-Grayish-Blue);
     text-decoration-line: line-through;
-    margin-top: 3px;
 }
-
 
 .note__circle {
     width: 20px;
@@ -49,9 +55,9 @@
     justify-content: center;
 }
 
-/* .note__check__img {
-    display: none;
-} */
+.note__circle.done {
+    background: var(--Check-Background);
+}
 
 .note__cross__icon {
     cursor: pointer;
