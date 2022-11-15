@@ -33,6 +33,7 @@
 .note__text {
     color: var(--Light-Grayish-Blue);
     margin-top: 3px;
+    word-break: break-all;
 }
 
 .note__text.light {
