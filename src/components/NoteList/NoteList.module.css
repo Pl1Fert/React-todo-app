@@ -1,10 +1,27 @@
+@import url(../../styles/Colors.css);
+
 .noteList {
     display: flex;
     flex-direction: column;
     border-radius: 2px;
     min-height: 372px;
     max-height: 372px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--Dark-Grayish-Blue) transparent;
+}
+
+.noteList::-webkit-scrollbar {
+    width: 3px;
+}
+
+.noteList::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.noteList::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    border: 3px solid var(--Dark-Grayish-Blue);
 }
 
 .noNotes__title {

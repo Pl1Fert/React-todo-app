@@ -1,11 +1,7 @@
 @import url(../../styles/Colors.css);
 
 .container {
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -40%);
-    margin-right: -50%;
+    margin: calc(15vh - 300px) auto 0;
     width: 540px;
     height: 600px;
 }

@@ -10,6 +10,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    top: auto !important;
+    left: auto !important;
 }
 
 .note.light {
@@ -22,7 +24,7 @@
 
 .note__content {
     margin-right: auto;
-    cursor: pointer;
+    cursor: hand;
     width: 80%;
     text-align: left;
     height: 100%;

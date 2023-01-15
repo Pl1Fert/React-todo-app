@@ -31,7 +31,9 @@ const MyInput = ({ create, mode }) => {
             onChange={(e) => setNote({ ...note, content: e.target.value })}
             onKeyDown={(e) => {
                 if (e.key === "Enter") {
-                    addNewNote();
+                    if (e.target.value.length > 0) {
+                        addNewNote();
+                    }
                 }
             }}
         />

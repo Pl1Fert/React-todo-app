@@ -37,9 +37,9 @@
     color: var(--Very-Dark-Grayish-Blue);
 }
 
-/* .footer__sort__query{
+.query_active {
     color: var(--Bright-Blue);
-} */
+}
 
 @media screen and (max-width:500px){
     .footer {

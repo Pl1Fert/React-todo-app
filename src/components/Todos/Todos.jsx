@@ -5,16 +5,57 @@ import moonIcon from "../../images/icon-moon.svg";
 import MyInput from "../Input/MyInput";
 import NoteList from "../NoteList/NoteList";
 import Footer from "../Footer/Footer";
+import { DragDropContext } from "react-beautiful-dnd";
+import { useState } from "react";
 
-const Todos = ({
-    notes,
-    create,
-    remove,
-    changeNoteStatus,
-    clear,
-    mode,
-    changeMode,
-}) => {
+const Todos = ({ mode, changeMode }) => {
+    const [notes, setNotes] = useState([]);
+    const [query, setQuery] = useState("all");
+
+    const createNote = (newNote) => {
+        setNotes([...notes, newNote]);
+    };
+
+    const removeNote = (note) => {
+        setNotes(notes.filter((n) => n.id !== note.id));
+    };
+
+    const changeNoteStatus = (note) => {
+        const newNotes = notes.map((n) =>
+            n.id === note.id
+                ? note.status === "active"
+                    ? { ...note, status: "completed" }
+                    : { ...note, status: "active" }
+                : n
+        );
+
+        setNotes(newNotes);
+    };
+
+    const clearCompletedNotes = () => {
+        setNotes(notes.filter((n) => n.status === "active"));
+    };
+
+    const onDragEnd = (result) => {
+        if (!result.destination) {
+            return;
+        }
+
+        if (
+            result.source.droppableId === result.destination.droppableId &&
+            result.source.index === result.destination.index
+        ) {
+            return;
+        }
+
+        const newNotes = [...notes];
+        const draggedItem = newNotes[result.source.index];
+        newNotes.splice(result.source.index, 1);
+        newNotes.splice(result.destination.index, 0, draggedItem);
+
+        setNotes(newNotes);
+    };
+
     return (
         <div className={classes.container}>
             <div className={classes.container__header}>
@@ -35,14 +76,23 @@ const Todos = ({
                     />
                 )}
             </div>
-            <MyInput create={create} mode={mode} />
-            <NoteList
-                notes={notes}
-                remove={remove}
-                changeNoteStatus={changeNoteStatus}
+            <MyInput create={createNote} mode={mode} />
+            <DragDropContext onDragEnd={onDragEnd}>
+                <NoteList
+                    notes={notes}
+                    remove={removeNote}
+                    changeNoteStatus={changeNoteStatus}
+                    mode={mode}
+                    query={query}
+                />
+            </DragDropContext>
+            <Footer
+                listLength={notes.length}
+                clear={clearCompletedNotes}
                 mode={mode}
+                query={query}
+                setQuery={setQuery}
             />
-            <Footer listLength={notes.length} clear={clear} mode={mode} />
         </div>
     );
 };
