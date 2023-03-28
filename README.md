@@ -4,4 +4,4 @@ The classic todo app with a few twists! This app includes a dark/light theme tog
 
 https://pl1fert.github.io/React-todo-app/
 
-Stack: React, CSS Modules, react-beautiful-dnd
+Stack: React, React Hooks, CSS Modules, react-beautiful-dnd
